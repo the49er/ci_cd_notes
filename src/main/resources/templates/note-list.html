@@ -37,8 +37,8 @@
         <tbody>
         <tr th:each="notes: ${listOfNotes}">
             <td th:text="${notes.nameNotes}"></td>
-            <td th:text="${notes.content}"></td>
-            <td th:text="${notes.visibility}"></td>
+            <td th:text="${#strings.length(notes.content)} >= 15 ? ${#strings.substring(notes.content,0,15)} + '...' : ${notes.content}"></td>
+            <td th:text="${#strings.toLowerCase(notes.visibility)}"></td>
             <td th:text="${notes.id}"></td>
             <td>
                 <ul>

@@ -20,7 +20,7 @@
 <form class="note-create" th:action="'/note/edit/'+ ${id} +'/save'" method="post">
     <p>Title <input type="text" class="title" th:value="${nameNotes}" name="setNameNotes" id="setNameNotes"></p>
 
-    <p><textarea rows="20" th:text="${content}" name="setContent" id="setContent"></textarea></p>
+    <p><textarea rows="20" th:text="${content}"  minlength="5" maxlength="100" name="setContent" id="setContent"></textarea></p>
 
     <input type="hidden" th:value="${id}">
 
