@@ -48,7 +48,7 @@ bootJar {
 
 tasks.register('release', Copy) {
 	from './build/libs/notesApp.jar'
-	into '/root/notes'
+	into '.../'
 }
 
 release.dependsOn bootJar
