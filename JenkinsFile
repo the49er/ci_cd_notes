@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+            steps {
+                sh './gradlew release'
+            }
+        }
+
+        stage('deploy') {
+            steps {
+                sh 'scp /var/lib/jenkins/workspace/noteApp/notesApp.jar root@159.89.107.231:/root/notesApp'
+            }
+        }
+    }
+}
