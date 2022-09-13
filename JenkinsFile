@@ -7,8 +7,7 @@ pipeline {
             }
         }
 
-
-        stage('deploy') {
+        stage('copy') {
             steps {
                 sh 'scp /var/lib/jenkins/workspace/noteApp/notesApp.jar root@159.89.107.231:/root/notesApp'
             }
