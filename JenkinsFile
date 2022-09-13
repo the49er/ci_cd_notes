@@ -9,7 +9,7 @@ pipeline {
 
         stage('copy') {
             steps {
-                sh 'scp /var/lib/jenkins/workspace/noteApp/notesApp.jar root@159.89.107.231:/root/notesApp'
+                sh 'scp /var/lib/jenkins/workspace/Deploy2/notesApp.jar root@159.89.107.231:/root/notesApp'
             }
         }
     }
