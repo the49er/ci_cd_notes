@@ -7,6 +7,11 @@ pipeline {
             }
         }
 
+        stage('copy') {
+                            steps {
+                                sh 'java -jar /var/lib/jenkins/workspace/Deploy2/notesApp.jar'
+                            }
+                        }
 
         stage('copy') {
                     steps {
