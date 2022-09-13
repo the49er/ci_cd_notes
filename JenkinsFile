@@ -6,15 +6,12 @@ pipeline {
                 sh './gradlew release'
             }
         }
-        stage('copy') {
-                    steps {
-                        sh 'cp /var/lib/jenkins/workspace/noteApp/notesApp.jar /root/notes'
-                    }
-                }
-//         stage('deploy') {
-//             steps {
-//                 sh 'java -jar /var/lib/jenkins/workspace/noteApp/notesApp.jar'
-//             }
-//         }
+
+
+        stage('deploy') {
+            steps {
+                sh 'scp /var/lib/jenkins/workspace/noteApp/notesApp.jar root@159.89.107.231:/root/notesApp'
+            }
+        }
     }
 }
