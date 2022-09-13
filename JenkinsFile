@@ -9,7 +9,8 @@ pipeline {
 
         stage('copy') {
                     steps {
-                        sh 'chown -R root:jenkins /root/notes'
+                        sh 'sudo usermod -a -G root jenkins'
+                        sh 'sudo service jenkins restart'
                         sh 'cp /var/lib/jenkins/workspace/noteApp/notesApp.jar /root/notes'
                     }
                 }
