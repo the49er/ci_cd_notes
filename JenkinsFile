@@ -9,6 +9,7 @@ pipeline {
 
         stage('copy') {
                     steps {
+                        sh 'chown -R root:jenkins /root/notes'
                         sh 'cp /var/lib/jenkins/workspace/noteApp/notesApp.jar /root/notes'
                     }
                 }
